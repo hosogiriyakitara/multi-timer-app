@@ -12,8 +12,8 @@
 .timer-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 10px;
-  padding: 10px;
+  gap: 5px;
+  padding: 5px;
   max-width: 100%;
   margin: auto;
   justify-items: center;
