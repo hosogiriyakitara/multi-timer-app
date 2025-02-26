@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/multi-timer-app/static/css/main.f5ba7135.css",
+    "main.js": "/multi-timer-app/static/js/main.e38fbcee.js",
+    "static/js/453.022c39f3.chunk.js": "/multi-timer-app/static/js/453.022c39f3.chunk.js",
+    "index.html": "/multi-timer-app/index.html",
+    "main.f5ba7135.css.map": "/multi-timer-app/static/css/main.f5ba7135.css.map",
+    "main.e38fbcee.js.map": "/multi-timer-app/static/js/main.e38fbcee.js.map",
+    "453.022c39f3.chunk.js.map": "/multi-timer-app/static/js/453.022c39f3.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f5ba7135.css",
+    "static/js/main.e38fbcee.js"
+  ]
+}
