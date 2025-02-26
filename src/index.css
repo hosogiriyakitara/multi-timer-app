@@ -7,6 +7,7 @@
   margin: auto;
 }
 
+
 /* タイマーのグリッドレイアウト（2列固定） */
 .timer-grid {
   display: grid;
@@ -28,8 +29,8 @@
   padding: 6px;
   border-radius: 8px;
   background-color: #f8f8f8;
-  width: 600px;
-  height: 150px;
+  width: 480px;
+  height: 120px;
   box-sizing: border-box;
   position: relative;
 }
@@ -46,7 +47,7 @@
 /* タイマー名（左寄せ） */
 .timer-name {
   flex-grow: 0; /* 自動拡張を防ぐ */
-  font-size: 18px;
+  font-size: 16px;
   text-align: left; /* 左揃えに変更 */
   border: 1px solid #666;
   border-radius: 4px;
@@ -54,9 +55,9 @@
   font-weight: bold;
   background: transparent;
   outline: none;
-  margin-top: 6px;
-  margin-bottom: 5px;  
-  margin-left: 6px;
+  margin-top: 0px;
+  margin-bottom: 4px;  
+  margin-left: -6px;
   width: 350px; /* 必要な幅だけ確保 */
   background-color: white !important;  /* 常に白 */
   color: black !important;  /* 文字色は黒 */
@@ -75,15 +76,15 @@
   font-size: 16px;
   position: absolute;
   border-radius: 8px;
-  right: 6px;
-  margin-top: -12px;
+  right: 4px;
+  margin-top: -6px;
 
 }
 
 
 /* 時間表示のデザイン */
 .time-display {
-  font-size: 4.5rem;
+  font-size: 3rem;
   font-weight: bold;
   color: black;
   min-width: 200px;
@@ -95,21 +96,21 @@
   align-self: center; /* ← これで上下の中央揃え */
   margin-top: 0px; /* ← 上マージンを削減 */
   margin-bottom: 10px; /* ← 上マージンを削減 */
-  letter-spacing: 10px; /* ← 数字の間隔を調整 */
-  word-spacing: 4px; /* ← `:` の間隔を調整（必要なら変更） */
+  letter-spacing: 8px; /* ← 数字の間隔を調整 */
+  word-spacing: 2px; /* ← `:` の間隔を調整（必要なら変更） */
 
 }
 
 
 .time-select select {
-  font-size: 2.0rem;
-  padding: 20px;
+  font-size: 2.0em;
+  padding: 0px;
   border-radius: 4px;
   border: 1px solid #666;
-  width: 110px;
-  height: 80px; /* ← 高さを少し小さくする */
+  width: 80px;
+  height: 60px; /* ← 高さを少し小さくする */
   gap: 10px;
-  margin-left: 16px;
+  margin-left: 14px;
   margin-bottom: 6px;
 
 }
@@ -131,11 +132,11 @@
 
 /* 丸いボタン */
 .start-btn, .reset-btn {
-  width: 70px;
-  height: 70px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
   border: none;
-  font-size: 16px;
+  font-size: 15px;
   cursor: pointer;
   margin-bottom: 8px;
 }
