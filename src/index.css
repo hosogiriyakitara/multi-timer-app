@@ -1,13 +1,180 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* 全体コンテナ */
+.container {
+  text-align: center;
+  font-family: "Arial", sans-serif;
+  padding: 6px;
+  max-width: 100vw; /* 画面幅を超えないようにする */
+  margin: auto;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* タイマーのグリッドレイアウト（2列固定） */
+.timer-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  padding: 10px;
+  max-width: 100%;
+  margin: auto;
+  justify-items: center;
+}
+
+/* タイマー全体 */
+.timer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch;
+  border: 2px solid #444;
+  padding: 6px;
+  border-radius: 8px;
+  background-color: #f8f8f8;
+  width: 600px;
+  height: 150px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+/* タイマーのヘッダー（タイマー名 + 削除ボタン） */
+.timer-header {
+  display: flex;  /* 横並びにする */
+  justify-content: space-between; /* 左にタイマー名、右に削除ボタン */
+  align-items: center; /* 縦方向の中央揃え */
+  width: 100%; /* ヘッダー全体の幅 */
+  padding-left: 10px; /* 左側の余白を追加 */
+}
+
+/* タイマー名（左寄せ） */
+.timer-name {
+  flex-grow: 0; /* 自動拡張を防ぐ */
+  font-size: 18px;
+  text-align: left; /* 左揃えに変更 */
+  border: 1px solid #666;
+  border-radius: 4px;
+  padding: 4px;
+  font-weight: bold;
+  background: transparent;
+  outline: none;
+  margin-top: 6px;
+  margin-bottom: 5px;  
+  margin-left: 6px;
+  width: 350px; /* 必要な幅だけ確保 */
+  background-color: white !important;  /* 常に白 */
+  color: black !important;  /* 文字色は黒 */
+  animation: none !important;  /* 点滅を無効化 */
+}
+
+
+/* 削除ボタン */
+.remove-btn {
+  background-color: red;
+  color: white;
+  width: 30px;
+  height: 30px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  position: absolute;
+  border-radius: 8px;
+  right: 6px;
+  margin-top: -12px;
+
+}
+
+
+/* 時間表示のデザイン */
+.time-display {
+  font-size: 4.5rem;
+  font-weight: bold;
+  color: black;
+  min-width: 200px;
+  text-align: center;
+  white-space: nowrap;
+  margin: 0; /* 余計な余白を削除 */
+  line-height: 1; /* 行の高さを適切に設定 */
+  margin-left: 20px; /* 左からの余白を追加 */
+  align-self: center; /* ← これで上下の中央揃え */
+  margin-top: 0px; /* ← 上マージンを削減 */
+  margin-bottom: 10px; /* ← 上マージンを削減 */
+  letter-spacing: 10px; /* ← 数字の間隔を調整 */
+  word-spacing: 4px; /* ← `:` の間隔を調整（必要なら変更） */
+
+}
+
+
+.time-select select {
+  font-size: 2.0rem;
+  padding: 20px;
+  border-radius: 4px;
+  border: 1px solid #666;
+  width: 110px;
+  height: 80px; /* ← 高さを少し小さくする */
+  gap: 10px;
+  margin-left: 16px;
+  margin-bottom: 6px;
+
+}
+
+
+/* 時間とボタンを横に配置 */
+.time-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+/* ボタン */
+.button-group {
+  display: flex;
+  gap: 10px;
+}
+
+/* 丸いボタン */
+.start-btn, .reset-btn {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  margin-bottom: 8px;
+}
+
+/* STARTボタン */
+.start-btn {
+  background-color: limegreen;
+  color: black;
+}
+
+/* RESETボタン */
+.reset-btn {
+  background-color: gray;
+  color: white;
+  margin-right: 20px;
+
+}
+
+/* 5分以下のタイマー（赤枠 + 黄色背景） */
+.warning {
+  background-color: rgb(255, 255, 155) !important;  /* 黄色背景 */
+}
+
+/* 0秒で「赤枠 + 赤背景 + 白文字 + 点滅」 */
+.flashing {
+  border: 3px solid red;  /* 赤枠 */
+  background-color: red !important; /* 赤背景 */
+  color: white !important; /* 文字を白にする */
+  animation: blink 1s infinite alternate; /* 点滅アニメーション */
+}
+
+/* 点滅アニメーション */
+@keyframes blink {
+  0% { opacity: 1; }
+  50% { opacity: 0.5; }
+  100% { opacity: 1; }
+}
+
+/* 0秒時の時間表示を白にする */
+.flashing .time-display {
+  color: white !important;
 }
