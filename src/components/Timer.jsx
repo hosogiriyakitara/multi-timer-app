@@ -64,7 +64,9 @@ export default function Timer({ index, removeTimer }) {
   
 
   return (
-    <div className={`timer ${timeLeft < 300 ? "warning" : ""} ${timeLeft === 0 ? "flashing" : ""}`}>
+    <div
+      className={`timer ${running ? "running" : ""} ${timeLeft < 300 ? "warning" : ""} ${timeLeft === 0 ? "flashing" : ""}`}
+      >
       <div className="timer-header">
         <input type="text" className="timer-name" value={name} onChange={(e) => setName(e.target.value)} />
         <button className="remove-btn" onClick={() => removeTimer(index)}>✖</button>

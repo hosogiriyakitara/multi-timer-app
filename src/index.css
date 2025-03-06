@@ -155,6 +155,11 @@
 
 }
 
+/* タイマー稼働中（薄い青背景） */
+.running {
+  background-color: lightblue !important;
+}
+
 /* 5分以下のタイマー（赤枠 + 黄色背景） */
 .warning {
   background-color: rgb(255, 255, 155) !important;  /* 黄色背景 */
@@ -179,3 +184,11 @@
 .flashing .time-display {
   color: white !important;
 }
+
+/* タイマー稼働中（薄い青背景） */
+.running {
+  background-color: lightblue !important;
+}
+
+
+

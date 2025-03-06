@@ -15,7 +15,10 @@ export default function App() {
   };
 
   return (
-    <div className="container">
+    <div
+      className={`timer ${running ? "running" : ""} ${timeLeft < 300 ? "warning" : ""} ${timeLeft === 0 ? "flashing" : ""}`}
+    >
+ 
       <h1>カウントダウン君</h1>
       <button onClick={addTimer}>+</button>
       <div className="timer-grid">
